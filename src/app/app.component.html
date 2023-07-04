@@ -1,0 +1,12 @@
+<div
+  *ngIf="
+   router.url.includes('auth') ||
+   router.url.includes('login') ||
+   router.url === '/' ||
+   router.url === '/page-not-found'; else auth"
+  class="auth-wrapper">
+  <router-outlet></router-outlet>
+</div>
+<ng-template #auth>
+  <app-nav-menu-component></app-nav-menu-component>
+</ng-template>

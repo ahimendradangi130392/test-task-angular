@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+
+	<mat-sidenav #sidenav mode="over">
+		<label>TEST APPLICATION</label> 
+    <hr/>   
+		<nav>
+            <a style="">Welcome {{ userData['first_name'] }}</a>
+			<a routerLink="home"      (click)="clickHandler()" routerLinkActive="active">Home</a>
+			<a routerLink="about"     (click)="clickHandler()" routerLinkActive="active">About</a>
+			<a  (click)="logout()" routerLinkActive="active">Logout</a>+
+			<a routerLink="contact"   (click)="clickHandler()" routerLinkActive="active">Contact</a>
+		</nav>
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+		<mat-toolbar color="primary">
+			<header>
+				<mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+				<label>TEST APPLICATION</label>       
+        <nav style="display: flex;
+        place-items: center;">
+          <a routerLink="home"    routerLinkActive="active">Home</a>
+          <a routerLink="about"   routerLinkActive="active">About</a>
+          <a  (click)="logout()" routerLinkActive="active">Logout</a>
+          <a routerLink="contact" routerLinkActive="active">Contact</a>
+          <span></span>
+          <a tooltip="hhh" class="usernameIcon" > {{ userData['first_name'] }} <span >{{ userData['first_name'] }}</span></a>
+        </nav>        
+      </header>
+		</mat-toolbar>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

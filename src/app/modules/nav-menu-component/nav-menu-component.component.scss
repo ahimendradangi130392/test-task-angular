@@ -1,0 +1,43 @@
+.usernameIcon{
+    border: 1px solid #679e37;
+          border-radius: 50% !important;
+          line-height: 19px;
+          background: #69a03a;
+          color: #fff !important;
+          font-size: 0px !important;
+          width: 30px;
+          text-transform: capitalize;
+          letter-spacing: 15px;
+          cursor: pointer;
+          position: relative;
+          height: 28px;
+          display: inline-block;
+}
+.usernameIcon:first-letter{
+font-size: 12px;
+}
+.usernameIcon span{
+    position: absolute;
+    display: none;
+    top: 35px;
+    letter-spacing: 2px;
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: #000;
+    color: #fff !important;
+    left: -13px;
+    border-radius: 7px;
+}
+.usernameIcon:hover span{
+display: block;
+}
+.usernameIcon span::after {
+    content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+  }

@@ -1,0 +1,82 @@
+<div *ngIf="!isSignUp">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="email"
+              formControlName="email">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password"
+              formControlName="password" minlength="6">
+          </mat-form-field>
+        </p>
+
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+        <div class="button">
+          <button style="    background: #406540;
+          display: block; color: #fff; " type="submit" mat-button>Login</button>
+         
+        </div>
+        <div mat-button style="position: relative;top: 10px;">if user not register <span class="signup-btn" (click)="signUp(true)">Sign up</span></div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="isSignUp">
+  <mat-card>
+    <mat-card-title>REGISTRAION</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="registerForm">
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="first name"
+              formControlName="first_name">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="last name"
+              formControlName="last_name">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input type="email" matInput placeholder="email"
+              formControlName="email">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="password"
+              formControlName="password" minlength="6">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="confirm Password"
+              formControlName="confirmPassword">
+          </mat-form-field>
+        </p>
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+        <div class="button">
+          <button (click)="signUpSubmit()" mat-button>Sign up</button>
+        </div>
+        <div mat-button style="position: relative;top: 10px;">if user already register <span class="signup-btn" (click)="signUp(false)">Login</span></div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
